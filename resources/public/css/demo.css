@@ -1,0 +1,172 @@
+/*
+** Styles, typography and layout for the cliche editor demo.
+ */
+
+/* Some variables. */
+:root {
+
+    /* Some colors. */
+    --body-background-color: #f6f6f6;
+    --body-text-color: #111111;
+    --border-color: #ccc;
+    --column-background-color: #fcfcfc;
+    --heading-color: #575757;
+    --link-color: dodgerblue;
+
+    /* Fonts to use in various parts of the UI. */
+    --body-font-family: Palatino, Georgia, serif;
+    --fixed-font-family: Consolas, "Ubuntu Mono", Menlo, "Courier New", monospace;
+    --headline-font-family: "Century Gothic", "Segoe UI", Arial, sans-serif;
+}
+
+html, body {
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: var(--body-background-color);
+    color: var(--body-text-color);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--body-font-family);
+    font-weight: normal;
+    height: 100%;
+    line-height: 1.5rem;
+    padding: 1rem;
+}
+
+h1, h2, h3, h4 {
+    color: var(--heading-color);
+    font-family: var(--headline-font-family);
+}
+
+h1 {
+    font-size: 2.1rem
+}
+
+h2 {
+    font-size: 1.728rem
+}
+
+h3 {
+    font-size: 1.44rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*
+** If ClojureScript is inserting its app here, and the layout has flexbox
+** elements that are expected to occupy remaining height (think header,
+** main, footer where the main div pushes the footer to the bottom of the
+** page, you need to make sure the div maintains the chain of 100% height
+** elements.
+ */
+.app-div {
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 100%;
+}
+
+.two-column-div {
+    display: flex;
+    flex: 1;
+}
+
+.editor-column, .info-column {
+    background: var(--column-background-color);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 40%;
+}
+
+.editor-column {
+    border: 1px solid var(--border-color);
+    margin-right: 0.5rem;
+}
+
+.info-column {
+    margin-left: 0.5rem;
+}
+
+.info-item {
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0.5rem;
+}
+
+.info-title {
+}
+
+.info-text-data {
+    font-size: 1.2rem;
+}
+
+.info-code-data {
+    font-family: var(--fixed-font-family);
+}
+
+/*
+** Styles for elements in the cliche editor component itself.
+ */
+
+.cliche-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.cliche-toolbar {
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.cliche-toolbar-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    vertical-align: bottom;
+}
+
+.cliche-toolbar-button:active {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.cliche-toolbar-button-selected {
+    background-color: #e0e0e0;
+}
+
+.cliche-editor {
+    flex: 1;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.cliche-editor:focus {
+    outline: none;
+}

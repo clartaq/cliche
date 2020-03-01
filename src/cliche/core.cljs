@@ -19,8 +19,9 @@
                               <p>
                               And <a href=\"https://github.com/clartaq/cliche\">
                               here's</a> the project repository.
-                              </p>"}))
-
+                              </p>
+                              <p>Here's an example of the autolink extension:&nbsp;
+                              <a href=\"https://www.example.com\"><span data-auto-link=\\\"true\\\" data-href=\\\"https://www.example.com\\\">https://www.example.com</span></a>.</p>"}))
 
 ;; Ids for some of the elements in the page.
 
@@ -57,6 +58,7 @@
   [asr settings]
   (let [opts (clj->js
                {:buttonLabels "fontawesome"
+                :autoLink     "true"
                 :spellcheck   "false"
                 :placeholder  {:text "Type your text here"}
                 :toolbar      {:buttons
